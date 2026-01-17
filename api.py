@@ -22,12 +22,12 @@ def form():
         description=request.form.get("description")
         
         if not name or not description:
-            error="Name or description required"
+            error="All fields are required"
             return render_template("form.html",error=error)
         try:
             collection.insert_one({
-                "name":name,
-                "description":description
+                "itemName":name,
+                "itemDescription":description
             })
             
             return redirect("/submittodoitem")
