@@ -11,7 +11,7 @@
     <p>Welcome To-Do Form</p>
 
     <div class="centered">
-        <form action="/submittodoitem" method="post">
+        <form action="/" method="post">
             <label>Item Name:</label>
             <input type="text" name="name" id="name" placeholder="Enter item name"><br><br>
 
@@ -21,8 +21,12 @@
             <input type="submit" value="Submit"><br><br>
 
         </form>
+        
+        {% if error %}
+        <p style="color: red;">{{ error }}</p>
+        {% endif %}
 
-
+        
     </div>
 </body>
 <style>
